@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Green Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 0;
+        margin: 0;
+        }
+
+        .header {
+        background-color: #4CAF50;
+        padding: 10px 20px;
+        color: #fff;
+        }
+
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        }
+
+        .logo-image {
+        height: 50px; 
+        width: 50px;
+        border-radius: 60px;
+        }
+
+        .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        }
+
+        .nav-links li {
+        margin: 0 10px;
+        }
+
+        .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .nav-links a:hover{
+            text-decoration: underline;
+        }
+
+        .nav-links a.active {
+        border-bottom: 2px solid #fff;
+        }
+
+        .about-us {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-intro h1 {
+        font-size: 2.5em;
+        color: #2c7a7b;
+        margin-bottom: 20px;
+        }
+
+        .about-intro p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        }
+
+        .mission-vision {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        flex-wrap: wrap; 
+        }
+
+        .content-box {
+        background-color: #e6fffa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        transition: background-color 0.3s ease, font-weight 0.3s ease; 
+        }
+
+        .content-box h2 {
+        color: #2c7a7b;
+        margin-bottom: 10px;
+        transition: color 0.3s ease, font-weight 0.3s ease; 
+        }
+
+        .content-box:hover {
+        background-color: #fff07c;
+        font-weight: bold;
+        }
+
+        .content-box h2:hover {
+        color: #333;
+        }
+
+        .team {
+        margin: 30px 0;
+        }
+
+        .team-members {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        }
+
+        .member {
+        margin: 15px;
+        text-align: center;
+        }
+
+        .member img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        }
+
+        footer {
+        background-color: #333;
+        color: #fff;
+        margin-top: 40px;
+        padding: 20px;
+        text-align: center;
+        }
+
+        .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        }
+
+        .footer-logo-img {
+        width: 70px; 
+        height: auto; 
+        margin-right: 10px; 
+        border-radius: 50%;
+        }
+
+        .footer-logo h2 {
+        font-size: 3em;
+        color: #ffcc00; 
+        }
+
+        .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+        }
+
+        .footer-links ul li {
+        display: inline;
+        }
+
+        .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+        color: #ffcc00; 
+        }
+
+        .footer-social {
+        margin: 20px 0;
+        }
+
+        .social-icon {
+        color: #fff;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+        transform: scale(1.2);
+        color: #ffcc00; 
+        }
+
+        .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        }
+
+        .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+
+        .about-us {
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .mission-vision {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content-box {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .team-members {
+            flex-direction: column;
+        }
+
+        .member {
+            margin: 10px 0;
+        }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+        .navbar {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            flex-direction: row;
+        }
+
+        .about-us {
+            margin: 15px;
+            padding: 30px;
+        }
+
+        .mission-vision {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .content-box {
+            width: 45%;
+        }
+
+        .team-members {
+            flex-wrap: wrap;
+        }
+
+        .member {
+            margin: 20px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="image/green.jpeg" alt="Green Mart Food City Logo" class="logo-image">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Categories</a></li>
+                <li><a href="../Sajith/feed.html">Contact Us</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-us">
+        <section class="about-intro">
+            <h1>Welcome to Green Mart Food City</h1>
+            <p>Your one-stop destination for fresh, organic, and quality food products. At Green Mart Food City, we believe in providing the best groceries with exceptional customer service. Our mission is to make healthy food accessible to everyone.</p>
+        </section>
+
+        <section class="mission-vision">
+            <div class="content-box">
+                <h2>Our Mission</h2>
+                <p>To offer a wide range of high-quality food products that cater to the needs of our customers while promoting sustainable and eco-friendly practices.</p>
+            </div>
+            <div class="content-box">
+                <h2>Our Vision</h2>
+                <p>To be the leading supermarket that empowers communities by providing fresh, affordable, and nutritious food options.</p>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Meet Our Team</h2>
+            <p>We are a team of passionate individuals dedicated to providing the best shopping experience. Meet the people who make Green Mart Food City a success.</p>
+            <div class="team-members">
+               
+                <div class="member">
+                    <img src="image/user2.jpg" alt="Team Member 1">
+                    <h3>K.G.D.K.Gunasekara</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="member">
+                    <img src="image/user3.jpg" alt="Team Member 2">
+                    <h3>M.P.S.J.Rathnayaka</h3>
+                    <p>Managing Director</p>
+                </div>
+                <div class="member">
+                    <img src="image/user1.jpg" alt="Team Member 3">
+                    <h3>G.D.V.Lakshan</h3>
+                    <p>Head of Marketing</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="image/green.jpeg" alt="Green Mart Logo" class="footer-logo-img"> 
+                <h2>Green Mart</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="../Sajith/feed.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Green Mart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Green Mart</title>
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Green Mart</h1>
+        <nav>
+            <ul>
+                <li><a href="../Sahan/index.html">Home</a></li>
+                <li><a href="../Sahan/category.html">Category</a></li>
+                <li><a href="../Praveen/registration.html">Reginstration</a></li>
+                <li><a href="../Praveen/login.html">Login</a></li>
+                <li><a href="pay.html">Payment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, suggestions, or feedback, please feel free to reach out to us!</p>
+            
+            <div class="contact-panel">
+                <h3>Our Contact Details</h3>
+                <p><strong>Phone:</strong> <a href="tel:+94764201265">+94764201265</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@greenmart.com">contact@greenmart.com</a></p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/greenmart" target="_blank">Green Mart on Facebook</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/greenmart" target="_blank">@greenmart on instrgram</a></p>
+                <p><strong>X:</strong> <a href="https://www.twitter.com/greenmart" target="_blank">@greenmart on X</a></p>
+            </div>
+
+            <!--Form -->
+            <div class="form-section">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" onsubmit="return validateForm()">
+              
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Your full name...">
+                    </div>
+        
+                    <div class="form-group">
+                        <label2 for="email">Email</label2>
+                        <input type="email" id="email" name="email" placeholder="Enter Your email address...">
+                    </div>
+
+                    <div class="form-group">
+                        <label1 for="message">Feedback</label1>
+                        <textarea id="message" name="message" placeholder="Enter Your feedback or message..." rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <div class="star-rating">
+                            <span class="star" data-rating="1">&#9733;</span>
+                            <span class="star" data-rating="2">&#9733;</span>
+                            <span class="star" data-rating="3">&#9733;</span>
+                            <span class="star" data-rating="4">&#9733;</span>
+                            <span class="star" data-rating="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" value="">
+                        <div id="ratingError" class="error">Please select a rating.</div>
+                    </div>
+<h1></h1>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div id="formMessage"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="image/icon.jpeg" alt="Green Mart Logo" class="footer-logo-img"> 
+                <h2>Green Mart</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../Sahan/aboutUs.html">About Us</a></li>
+                    <li><a href="../Sahan/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../Sahan/terms.html">Terms of Service</a></li>
+                    <li><a href="feed.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Green Mart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="test.js"></script>
+</body>
+</html>

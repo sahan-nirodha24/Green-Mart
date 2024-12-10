@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category | Green Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #faf1e0, #99d4a7); 
+        }
+
+        .navbar {
+            background-color:  #4CAF50;
+            color: white;
+            padding: 15px 20px; 
+            text-align: center;
+            font-size: 22px; 
+            transition: background-color 0.3s, transform 0.3s; 
+        }
+
+        .navbar:hover {
+            background-color: #479f4a; 
+            transform: scale(1.02); 
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 20px; 
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em; 
+            transition: color 0.3s; 
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+            color: #fbff00;
+        }
+
+         .header h2 {
+            font-size: 2.5em; 
+            text-align: center;
+            background: linear-gradient(135deg, #38ff52, #000000); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0); 
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .category-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 400px; 
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 60%; 
+            object-fit: cover;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .category-item:hover .category-image {
+            opacity: 0.7;
+        }
+
+        .category-content {
+            position: absolute;
+            bottom: 0;
+            background: none; 
+            color: white;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            height: 40%; 
+            box-sizing: border-box; 
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .category-content::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.7), rgba(255, 105, 180, 0.7)); 
+            z-index: -1; 
+            transition: opacity 0.3s;
+        }
+
+        .category-item:nth-child(1) .category-content::before {
+            background: linear-gradient(135deg, #FFB6C1, #FF69B4); 
+        }
+
+        .category-item:nth-child(2) .category-content::before {
+            background: linear-gradient(135deg, #FFD700, #FFA500); 
+        }
+
+        .category-item:nth-child(3) .category-content::before {
+            background: linear-gradient(135deg, #90EE90, #32CD32);
+        }
+
+        .category-item:nth-child(4) .category-content::before {
+            background: linear-gradient(135deg, #ADD8E6, #87CEFA); 
+        }
+
+        .category-item:nth-child(5) .category-content::before {
+            background: linear-gradient(135deg, #FF6347, #FF4500); 
+        }
+
+        .category-item:nth-child(6) .category-content::before {
+            background: linear-gradient(135deg, #FFC0CB, #FF1493); 
+        }
+
+        .category-item:nth-child(7) .category-content::before {
+            background: linear-gradient(135deg, #F0E68C, #FFD700); 
+        }
+
+        .category-item:nth-child(8) .category-content::before {
+            background: linear-gradient(135deg, #D3D3D3, #A9A9A9); 
+        }
+
+        .category-item:hover .category-content::before {
+            opacity: 0.8; 
+        }
+
+        .category-title {
+            font-size: 1.5em; 
+            font-weight: 700;
+            margin-bottom: 5px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .category-description {
+            font-size: 16px;
+            color: #333; 
+            animation: fadeIn 0.7s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-img {
+            width: 70px; 
+            height: auto; 
+            margin-right: 10px; 
+            border-radius: 50%;
+        }
+
+        .footer-logo h2 {
+            font-size: 3em;
+            color: #ffcc00; 
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links ul li {
+            display: inline;
+        }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ffcc00; 
+        }
+
+        .footer-social {
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #ffcc00; 
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+        .navbar {
+            font-size: 18px; 
+            padding: 10px 15px; 
+        }
+
+        .navbar li {
+            margin: 0 10px; 
+        }
+
+        .categories-grid {
+            grid-template-columns: 1fr; 
+            gap: 10px; 
+            padding: 10px; 
+        }
+
+        .category-item {
+            height: 300px; 
+        }
+
+        .category-image {
+            height: 50%;
+        }
+
+        .category-title {
+            font-size: 1.2em; 
+        }
+
+        .category-description {
+            font-size: 14px; 
+        }
+
+        footer {
+            padding: 10px; 
+        }
+
+        .footer-logo h2 {
+            font-size: 2em; 
+        }
+
+        .footer-links ul {
+            flex-direction: column; 
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px; 
+        }
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .navbar {
+            font-size: 20px; 
+            padding: 12px 18px; 
+        }
+
+        .navbar li {
+            margin: 0 15px; 
+        }
+
+        .categories-grid {
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+        }
+
+        .category-item {
+            height: 350px; 
+        }
+
+        .category-image {
+            height: 55%; 
+        }
+
+        .category-title {
+            font-size: 1.4em; 
+        }
+
+        .category-description {
+            font-size: 15px; 
+        }
+
+        footer {
+            padding: 15px; 
+        }
+
+        .footer-logo h2 {
+            font-size: 2.5em; 
+        }
+
+        .footer-links ul {
+            flex-direction: row; 
+        }
+
+        .footer-links ul li {
+            margin: 0 15px; 
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../Sajith/feed.html">Contact Us</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+        </ul>
+    </div>
+    <div class ="header">
+        <h2>Categories</h2>
+    </div>
+    <div class="categories-grid">
+        <div class="category-item">
+            <a href="../Dulan/br.html"><img src="image/img1.jpg" alt="Bakery" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Bakery</div>
+                <p class="category-description">Freshly baked goods, bread, cakes, and pastries.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Dulan/so.html"><img src="image/img2.jpg" alt="Beverage" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Beverage</div>
+                <p class="category-description">Refreshing drinks, juices, sodas, and more.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Dulan/nav.html"><img src="image/img3.jpg" alt="Fruits" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Fruits</div>
+                <p class="category-description">A wide variety of fresh and exotic fruits.</p>               
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Dulan/vegi.html"><img src="image/img4.jpg" alt="Vegetables" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Vegetables</div>
+                <p class="category-description">Fresh and organic vegetables sourced locally.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Dulan/ph.html"><img src="image/img5.jpg" alt="Pharmacy" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Pharmacy</div>
+                <p class="category-description">Health and wellness products, medicines, and supplements.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Sajith/chill.html"><img src="image/img6.jpg" alt="Chilled" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Chilled</div>
+                <p class="category-description">Dairy, meat, and frozen foods stored at optimal temperatures.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="../Sajith/bis.html"><img src="image/img7.jpg" alt="Biscuits" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Biscuits</div>
+                <p class="category-description">Variety of biscuits and cookies for every taste.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+           
+            <a href="../Vimukthi/product_interface.php"><img src="image/img8.jpg" alt="Care" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Care</div>
+                <p class="category-description">Personal care products including skincare, haircare, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="image/green.jpeg" alt="Green Mart Logo" class="footer-logo-img"> 
+                <h2>Green Mart</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="../Sajith/feed.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Green Mart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Login | Green Mart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgba(242, 242, 242, 0.9); /* Slightly transparent background */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  margin-top: 10%;
+} 
+
+/* style inputs and link buttons */
+input[type=text],
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+  color: white;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* gradient theme */
+}
+
+input[type=text]:hover,
+.btn:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #fbc2eb, #a6c0fe); /* lighter gradient on hover */
+  color: #010101;
+  font-weight: 600;
+}
+
+/* style inputs and link buttons */
+input[type=password],
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+  color: white;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* gradient theme */
+}
+
+input[type=password]:hover,
+.btn:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #fbc2eb, #a6c0fe); /* lighter gradient on hover */
+  color: #010101;
+  font-weight: 600;
+}
+
+/* style the submit button */
+input[type=submit] {
+    width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=button] {
+    width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #45a049;
+}
+
+/* Social Media Buttons with Unique Backgrounds */
+.fb {
+  background: linear-gradient(135deg, #3b5998, #8b9dc3);
+}
+
+.twitter {
+  background: linear-gradient(135deg, #55acee, #c1d3fc);
+}
+
+.google {
+  background: linear-gradient(135deg, #dd4b39, #f7a1a1);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #e1306c, #fdcfdf);
+}
+
+.tiktok {
+  background: linear-gradient(135deg, #010101, #4a4a4a);
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 20px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #ccc;;
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Align text and buttons in bottom container */
+.bottom-container .btn {
+  font-size: 16px;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  width: auto;
+}
+
+.bottom-container a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+</style>
+
+
+<script>
+function redirectToHome() {
+window.location.href = '../Sahan/index.html';
+}
+function validateForm()
+{
+    var x=document.forms["loginform"]["username"].value;
+if (x==null || x=="")
+
+{
+alert("User name must be filled out");
+return false;
+}
+
+var y=document.forms["loginform"]["password"].value;
+if (y==null || y=="")
+
+{
+alert("Password must be filled out");
+return false;
+}
+
+}
+</script>
+
+
+
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      <div class="col">
+        <a href="https://www.facebook.com/login/" class="fb btn">
+          <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+        </a>
+        <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D" class="twitter btn">
+          <i class="fab fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&hl=en&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S222011882%3A1724252252058188&ddm=0" class="google btn">
+          <i class="fab fa-google fa-fw"></i> Login with Gmail
+        </a>
+        <a href="https://www.instagram.com/accounts/login/?hl=en" class="instagram btn">
+          <i class="fab fa-instagram fa-fw"></i> Login with Instagram
+        </a>
+        <a href="https://www.tiktok.com/login" class="tiktok btn">
+          <i class="fab fa-tiktok fa-fw"></i> Login with TikTok
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
+        </div>
+        <form name="loginform" action="login.php" onsubmit="return validateForm()" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login" name="login">  <a href="index.html"></a>
+        <input type="button" value="Go to Home" name="Go to Home" onclick="redirectToHome()">                                                                                               
+
+    </form>
+      </div>
+      
+    </div>
+  
+</div>
+
+<div class="bottom-container">
+  <a href="registration.html" class="btn">Register</a>
+  <a href="#" class="btn">Forgot password?</a>
+</div>
+
+</body>
+</html>
