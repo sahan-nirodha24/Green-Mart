@@ -1,4 +1,4 @@
-## This Is Our Websystem & Technologies Module Group Project
+## This Is Our Websystem & Technologies Module Mini Group Project
 
 Our Group Members:   
 
